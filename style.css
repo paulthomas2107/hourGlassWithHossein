@@ -1,0 +1,62 @@
+:root {
+  --sand-color: #edd0aa;
+  --frame-color: #c19875;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #161412;
+  overflow: hidden;
+}
+
+.hourGlass {
+  width: 180px;
+  height: 220px;
+}
+
+.hourGlass .frame {
+  position: absolute;
+  width: 180px;
+  height: 220px;
+  border-radius: 6px;
+  border-top: 10px solid var(--frame-color);
+  border-bottom: 10px solid var(--frame-color);
+}
+
+.hourGlass .top {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 100px;
+  clip-path: polygon(45% 100%, 55% 100%, 100% 0, 0 0);
+}
+
+.hourGlass .top::before {
+  content: '';
+  position: absolute;
+  width: 160px;
+  height: 100px;
+  background: var(--sand-color);
+}
+
+.hourGlass .bottom {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 100px;
+  clip-path: polygon(45% 0%, 55% 0, 100% 100%, 0 100%);
+}
+
+.hourGlass .bottom::before {
+  content: '';
+  position: absolute;
+  width: 160px;
+  height: 100px;
+  background: var(--sand-color);
+}
